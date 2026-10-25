@@ -161,6 +161,7 @@ body {
   max-width: 100%;
 }
 .label span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.label .name { white-space: normal; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow-wrap: anywhere; }
 .label .by { color: var(--ink-soft); }
 
 .empty { margin: 0 6px; font-size: 0.9rem; line-height: 1.45; color: var(--ink-soft); }
@@ -328,6 +329,7 @@ for (const section of SECTIONS) {
       const label = document.createElement("span");
       label.className = "label";
       const nameEl = document.createElement("span");
+      nameEl.className = "name";
       nameEl.textContent = app.name;
       label.appendChild(nameEl);
       if (app.by) {
